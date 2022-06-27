@@ -1,0 +1,35 @@
+@import "../../styles/colors";
+@import "../../styles/variables";
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+    background-color: $grey;
+    position: relative;
+}
+
+th {
+  .header-col-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sort-icon.disabled {
+    opacity: .7;
+  }
+}
+
+
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: .8rem;
+}
+
+tfoot th {
+  background-color: $creamy-white;
+}

@@ -6,30 +6,35 @@ table {
   width: 100%;
 }
 th {
-    background-color: $grey;
+    background-color: $bg-color1;
     position: relative;
 }
 
 th {
   .header-col-name {
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
+  .sort-icon {
+    margin-left: .5rem;
+    color: $dark-grey;
+  }
+
   .sort-icon.disabled {
     opacity: .7;
   }
 }
 
-
-
 td,
 th {
-  border: 1px solid #dddddd;
+  border: 1px solid $border-color1;
   text-align: left;
   padding: .8rem;
 }
 
 tfoot th {
-  background-color: $creamy-white;
+  background-color: $white;
 }

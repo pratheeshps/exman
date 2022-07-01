@@ -1,33 +1,53 @@
 @import "../styles/colors";
-
+$cat-primary: #333;
+$cat-grey: #ddd;
+$cat-grey1: #f3f3f3;
 
 .categories-container {
     margin: 1rem;
 
     .none-found {
-        margin: .6rem 0;
+        margin: 0.6rem 0;
     }
 }
 
 .category-list {
     .category-list-item {
-        border-bottom: 1px solid #ddd;
-        margin: 0.6rem 0;
+        border-bottom: 1px solid $cat-grey;
         border-radius: 4px;
-        padding: 1rem 0;
+        padding: .7rem 0;
         display: flex;
+        justify-content: space-between;
+
+        .actions {
+            display: flex;
+            align-items: center;
+            div {
+                margin-right: .4rem;
+                padding: .2rem .2rem;
+                height: 1.5rem;
+                opacity: .7;
+                transition: 0.5s;
+                cursor: pointer;
+                &:hover {
+                    background: $cat-grey1;
+                    opacity: 1;
+                }
+            }
+        }
     }
 
     .name {
         font-size: 1rem;
         font-weight: 600;
-        margin: 0.6rem 0;   
+        margin: 0.6rem 0;
+        color: $cat-primary;
     }
-                                    
+
     .total {
         font-size: 1rem;
         font-weight: 700;
-        color: #e83a14;
+        color: $cat-primary;
         word-wrap: break-word;
         margin-left: auto;
     }

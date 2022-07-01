@@ -1,12 +1,14 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import SearchBar from "../commons/SearchBar";
 import SectionHeader from "../commons/SectionHeader";
 import CategoriesList from "./CategoriesList";
 import "./categories.scss";
+import Modal from "../commons/Modal";
 
 function CategoriesContainer() {
     const [categoriesList, setcategoriesList] = useState(null);
     const [searchTerm, setSearchTerm] = useState("");
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         const list = [
@@ -29,9 +31,17 @@ function CategoriesContainer() {
         setcategoriesList(list);
     }, []);
 
-    const handleSearch = (e) => {
+    const handleSearch = useCallback((e) => {
         setSearchTerm(e.target.value);
-    };
+    }, []);
+
+    const handleModal = useCallback((type) => {
+        setShowModal(type);
+    }, []);
+
+    const handleClose = useCallback(() => {
+        setShowModal(false);
+    }, []);
 
     const filteredCategories = useMemo(() => {
         if (searchTerm === "") return categoriesList;
@@ -51,7 +61,13 @@ function CategoriesContainer() {
                 value={searchTerm}
                 handleSearch={handleSearch}
             />
-            <CategoriesList categories={filteredCategories} />
+            <CategoriesList
+                categories={filteredCategories}
+                handleModal={handleModal}
+            />
+            <Modal show={showModal} handleClose={handleClose}>
+                <p>{showModal}</p>
+            </Modal>
         </div>
     );
 }

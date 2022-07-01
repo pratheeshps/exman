@@ -1,0 +1,15 @@
+$search-border-color: #eee;
+$search-grey: #ddd;
+.search-bar {
+    input {
+        width: 100%;
+        height: 2rem;
+        border-radius: .3rem;
+        padding: 0 0.5rem;
+        border: 1px solid $search-border-color;
+
+        &:focus-visible {
+            outline-color: $search-grey;
+        }
+    }
+}

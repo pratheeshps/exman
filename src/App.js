@@ -1,14 +1,13 @@
 import "./App.scss";
 
-import Categories from "./categories";
+import CategoriesContainer from "./categories/CategoriesContainer";
 
 function App() {
 
- 
 
   return (
     <div className="em-main-container">
-      <Categories />
+      <CategoriesContainer />
     </div>
   );
 }

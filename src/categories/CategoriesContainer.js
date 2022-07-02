@@ -2,8 +2,8 @@ import React, { useState, useEffect, useMemo, useCallback } from "react";
 import SearchBar from "../commons/SearchBar";
 import SectionHeader from "../commons/SectionHeader";
 import CategoriesList from "./CategoriesList";
+import CategoriesModal from "./CategoriesModal";
 import "./categories.scss";
-import Modal from "../commons/Modal";
 
 function CategoriesContainer() {
     const [categoriesList, setcategoriesList] = useState(null);
@@ -65,9 +65,7 @@ function CategoriesContainer() {
                 categories={filteredCategories}
                 handleModal={handleModal}
             />
-            <Modal show={showModal} handleClose={handleClose}>
-                <p>{showModal}</p>
-            </Modal>
+            <CategoriesModal showModal={showModal} handleClose={handleClose} />
         </div>
     );
 }
